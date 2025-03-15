@@ -1,12 +1,16 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   home.packages = with pkgs; [
-    jellyfin-ffmpeg
-    djvu2pdf
-    tmux
-    neovim
-    ripgrep
-    lazygit
-    gdu
+    flatpak
     bottom
+    djvu2pdf
+    fzf
+    gdu
+    jellyfin-ffmpeg
+    lazygit
+    neovim
+    pre-commit
+    ripgrep
+    tmux
   ];
 }

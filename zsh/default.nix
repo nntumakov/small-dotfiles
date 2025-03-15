@@ -5,6 +5,8 @@
 }: {
   programs.bat.enable = true;
 
+  programs.eza.enable = true;
+
   programs.zsh = {
     enable = true;
 
@@ -23,10 +25,10 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      # ip = "ip --color=auto";
-
-      # upd = "nh os switch";
-    };
+    ls = "eza --icons -l";
+    la = "eza --icons -la";
+    lt = "eza --icons --tree";
+  };
 
     oh-my-zsh = {
       enable = true;

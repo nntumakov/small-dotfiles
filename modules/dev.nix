@@ -1,9 +1,27 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   home.packages = with pkgs; [
-    neovim
+    rustc
+    cargo
 
-    pre-commit
+    clang
+    cmake
+    llvmPackages_19.clang-tools
+
+    texliveFull
+    typst
+
+    tex-fmt
+    nixfmt-rfc-style
+
+    nodejs_23
   ];
+
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+    nix-direnv.enable = true;
+  };
 
   programs.git = {
     enable = true;
@@ -18,21 +36,5 @@
       pull.rebase = true;
       push.autoSetupRemote = true;
     };
-  };
-
-  programs.eza = {
-    enable = true;
-  };
-
-  programs.zsh.shellAliases = {
-    ls = "eza --icons -l";
-    la = "eza --icons -la";
-    lt = "eza --icons --tree";
-  };
-
-  programs.direnv = {
-    enable = true;
-    enableBashIntegration = true;
-    nix-direnv.enable = true;
   };
 }
